@@ -8,19 +8,20 @@ html {
 }
 
 body {
-	font-family: 'Montserrat', Helvetica, Arial, sans-serif;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	font-size: 1em;
+    font-family: 'Montserrat', Helvetica, Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1em;
 }
 
-.container{
+.container {
 	max-width: 1200px;
-	margin: 0 auto;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: row wrap;
 }
 
 h1,
@@ -32,7 +33,7 @@ h4 {
 	font-weight: 700;
 }
 h1 {
-	font-size: 1.875em;
+	font-size: 1.6em;
 }
 h2 {
     font-size: 1.56em;
@@ -47,42 +48,53 @@ h4 {
 p {
 	font-size: 1.14em;
 	line-height: 21px;
-    padding: 0 30px;
+  padding: 0 30px;
+	text-align: center;
 }
 
 /*The widths are in a percentage!*/
 header {
-	height: 110px;
+	height: auto;
 	border-bottom: 3px solid #77a466;
 	margin: 0 auto;
+	max-width: 1200px;
+	width: 90%;
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	flex-flow: row wrap;
 }
 
 header h1 {
-	float: left;
+	text-align: center;
 	margin: 0;
-	padding: 38px 0;
+	padding: 25px 0;
+	border-bottom: 3px solid #77a466;
 }
 header h1 span {
 	color: #77a466;
 }
 
 header nav {
-	float: right;
-	padding: 46px 0;
+	padding: 10px 0;
+
 }
 header nav ul {
 	margin: 0;
 	padding: 0;
+
 }
 header nav ul li {
 	text-transform: uppercase;
 	font-weight: 700;
-	font-size: 1.87em;
-	padding: 0 10px;
-	display: inline;
+	font-size: 1.10em;
+	padding:	10px 10px;
+	max-width: 1200px;
+	width: 90%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-flow: row wrap;
 }
 header nav ul li a{
 	text-decoration: none;
@@ -94,14 +106,17 @@ header nav ul li a{
 .bottom-section {
 	margin: 0 auto;
 	clear: both;
+	max-width: 1200px;
+	width: 90%;
 	display: flex;
-	justify-content: center;
+	justify-content: center ;
 	align-items: center;
+	flex-flow: row wrap;
 }
 
 .main-image {
 	height: auto;
-	float: left;
+	display: block;
 }
 .main-image img {
 	width: 100%;
@@ -110,10 +125,10 @@ header nav ul li a{
 
 .main-title {
 	height: auto;
-	float: left;
+
 }
 .main-title h3 {
-	text-align: left;
+	text-align: center;
 	padding: 5px 0;
 	color: #77a466;
 }
@@ -126,10 +141,11 @@ header nav ul li a{
 .section-one,
 .section-two,
 .section-three {
-	width: 33%;
+	width: 100%;
 	height: auto;
 	float: left;
 	border-top: 1px solid #eee;
+	justify-content: center;
 }
 
 .section-one h4 {
@@ -172,9 +188,12 @@ footer {
 	border-top: 3px solid #eee;
 	margin: 0 auto;
 	clear: both;
+	max-width: 1200px;
+	width: 90%;
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	flex-flow: row wrap;
 }
 footer span {
 	font-family: 'Wisdom Script', cursive;
@@ -182,3 +201,40 @@ footer span {
 	color: #77a466;
 	font-size: 0.75em;
 }
+
+/*Media Queries*/
+
+@media all and (min-width:768px) {
+	.container{
+		max-width: 1200px;
+		width: 90%;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		flex-flow: column;
+	}
+
+	.section-one, .section-two, .section-three {
+		flex-basis: 33%;
+		border-top: none;
+	}
+	.main-title {
+		text-align: left;
+	}
+
+}
+
+@media all and (min-width:1200px) {
+	header h1 {
+		text-align: center;
+
+	}
+	header nav ul {
+	display: flex;
+	justify-content: space-between;
+	}
+}
+	h3, p {
+		text-align: left;
+	}
